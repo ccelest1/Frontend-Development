@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    margin: 0;
+    font-size: clamp(0.5rem, 3.5vw, 10rem);
+}
+
+.box {
+    background: rebeccapurple;
+    height: 200px;
+    /*
+        once we hit 500px stop growing, once we hit 300px stop shrinkage i.e set size range
+        box is default 75% of screen size
+    */
+    width: clamp(300px, 75%, 500px);
+}
+
+.box-2 {
+    background: rebeccapurple;
+    height: 200px;
+}

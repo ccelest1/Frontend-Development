@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    margin: 0;
+}
+
+.box {
+    width: 100px;
+    background: rebeccapurple;
+    margin: 10px;
+}
+
+/*
+writing custom media queries
+
+@custom-media --big (width>=400px);
+
+@media (--big) {
+    .box {
+        background: red
+    }
+}
+*/
+@media (width>600px) {
+    .box {
+        background: red
+    }
+}
+
+.grid {
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    /*
+    [first value in repeat()]
+        auto-fit, auto-fill - determine # of cols to fit content
+            auto-fill adds more columns to appropriately size vs auto-fix
+    [second value]
+        minmax() -> at min just be 100px, grow to be any size 1 fr
+    */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    /* can also set a default height */
+    grid-auto-rows: 100px;
+}

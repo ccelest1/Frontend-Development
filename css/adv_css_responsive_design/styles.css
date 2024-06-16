@@ -1,0 +1,85 @@
+/*
+    have box and sidebar divs show side by side
+*/
+.main {
+    /*
+    defines how much an element grows relative to other flexible items inside the same parent element.
+    */
+    flex-grow: 1;
+}
+
+body {
+    display: flex;
+}
+
+.box {
+    background: rebeccapurple;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+}
+
+.sidebar {
+    width: 30%;
+    border-left: 1px solid black;
+}
+
+/*
+    use container to determine actual width, styling based on container
+*/
+.main,
+.sidebar {
+    container-type: inline-size
+}
+
+@container (width>=600px) {
+    .box {
+        background: red
+    }
+}
+
+/*
+    using media queries
+    when screen moves past certain pixel width, change box color
+
+@media (min-width:580px) {
+    .box {
+        background: red;
+    }
+}
+
+/*
+    can also perform media q checks with orientation
+    (1) if page is longer than it is wider
+    (2) if page is wider than it is longer
+
+    can also do width >= 600px
+    and even ranges
+        100px <= width <= 300px
+
+     most browsers support but can use post-css for ranges
+
+@media (min-width: 600px) and (orientation: portrait) {
+    .box {
+        background: black;
+    }
+}
+
+@media (min-width: 600px) and (orientation: landscape) {
+    .box {
+        background: goldenrod;
+    }
+}
+
+/*
+    can also perform media q checks with aspect ratio
+    (1) when AR is 1:1 - width is longer than height
+
+
+@media (min-aspect-ratio:1/1) {
+    .box {
+        background: blue;
+    }
+}
+
+*/

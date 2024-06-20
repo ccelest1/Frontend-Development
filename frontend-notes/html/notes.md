@@ -34,6 +34,3 @@
             - explanation: header section (section - use div with 'header' id) -> user and page title sections
                 * title uses h1 appropriate tag
                 * userbar wrapped in div -> then username in span for style changes (2 letters in title wrapped by span)
-
-
-- CSS Selectors: [https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors]

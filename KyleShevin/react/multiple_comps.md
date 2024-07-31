@@ -1,4 +1,5 @@
-# Prefer Multiple Compositions
+# Multiple Compositions to the Rescue in Responsive Design
+- [Article on Multiple Composition](https://kyleshevlin.com/prefer-multiple-compositions/)
 - When several decisions depend on single value, prefer multiple compositions even when more verbose v conditional handling inline
 
 - Example: If composition is preferred, VideoControls [ button that controls video state ]
@@ -78,4 +79,40 @@
         }
     ```
 
-- Compositions works well with objects that share a discriminated union ->
+```ts
+// example of discriminated union
+type MotorBike = {
+  type: 'motorbike';
+  fuel: 'petrol';
+}
+
+type Car = {
+  type: 'car';
+  doors: number;
+  bootSize: number;
+}
+
+type Vehicle = {
+  make: string;
+  model: string;
+  fuel: 'petrol' | 'diesel',
+} & (Car | MotorBike);
+```
+- Compositions works well with objects that share a discriminated union -> Stream can be in several phase: 'created'|'live'|'ended' (screens differ per live phase)
+```js
+function StreamDisplay({ stream }: { stream: Stream }) {
+  switch (stream.phase) {
+    case 'created':
+      return <StreamCreated stream={stream} />
+
+    case 'ended':
+      return <StreamEnded stream={stream} />
+
+    case 'live':
+      return <StreamLive stream={stream} />
+
+    default:
+      return null
+  }
+}
+```

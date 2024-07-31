@@ -1,8 +1,10 @@
-# Multiple Compositions to the Rescue in Responsive Design
-- [Article on Multiple Composition](https://kyleshevlin.com/prefer-multiple-compositions/)
-    - [notes](multiple_comps.md)
+# Responsive Design
+
+- [responsive design, comp](https://kyleshevlin.com/responsive-design-and-composition/)
+
 - When we have the same condition several times lower in component and element tree, lift it higher in order to reduce number of times it is to be checked
     - Ex: Turn `Presenter` into a [facade](https://kyleshevlin.com/facade-pattern/) rendering either `PresenterNarrow` or `PresenterWide` composition
+        * Hidden and Visible using breakpoints [https://stackoverflow.com/questions/74906909/tailwind-css-hidden-and-visible]
     ```js
     /*
         guarantee which context each sub-comp renders in
